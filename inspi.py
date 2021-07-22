@@ -74,10 +74,26 @@ class Hero:
         print("Welcome back {} the {}".format(self.name, self.race))
         print("{}, you have {} health.".format(self.hero_choice, self.health))
 
+def create_hero():
+    print("What is your name?")
+    hero_name = input("My name is: ")
 
-hero = Hero('bob', 200, 100, "Human", "Warrior")
-monster = Monster(5)
-monster.battle_action(hero)
-hero.battle_action(monster)
-hero.display_status()
+    print("Choose a race")
+    print("1. Human\t2. Elf\t3.Orc")
+
+    while True:
+        print("Choose a class.")
+        print("1.Warrior\t2. Mage\t3. Healer")
+        hero_choice = input("My class is: ")
+        if hero_choice == '1':
+            hero = Warrior(hero_name, 200, 100, race_choice, hero_choice)
+            break
+        elif hero_choice == '2':
+            hero = Mage(hero_name, 100, 50, race_choice, hero_choice)
+            break
+        elif hero_chocie == '3':
+            hero = Healer(hero_name, 200, 25, race_choice, hero_choice)
+            break
+    return hero
+
 
